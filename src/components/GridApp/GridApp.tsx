@@ -51,7 +51,7 @@ class GridApp extends Component<GridAppProps, GridAppState> {
     const changedCard = this.state.cards.find(c => c.key === id)!;
     changedCard.status = status;
     this.setState({
-      cards: [...this.state.cards.filter(c => c.key != id), changedCard]
+      cards: [...this.state.cards.filter(c => c.key !== id), changedCard]
     });
   };
 }
