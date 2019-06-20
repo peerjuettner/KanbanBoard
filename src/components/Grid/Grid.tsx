@@ -1,45 +1,32 @@
 import React, { Component } from "react";
 import Card from "../Card/Card";
-import { status } from "../GridApp/CardStatus";
+import { Status } from "../GridApp/CardStatus";
+import { ICard } from "../GridApp/GridApp";
+interface GridProps {
+  cards: Array<ICard>;
+  handleCardChange: (id: number, status: Status) => void;
+}
 
-class Grid extends Component {
-  constructor(props) {
+export class Grid extends Component<GridProps, {}> {
+  constructor(props: GridProps) {
     super(props);
     this.state = {};
   }
   render() {
     const todoC = this.props.cards
-      .filter(c => c.status === status.Todo)
+      .filter(c => c.status === Status.Todo)
       .map(c => (
-        <Card
-          title={c.title}
-          key={c.key}
-          id={c.key}
-          status={c.status}
-          handleCardChange={this.props.handleCardChange}
-        />
+        <Card title={c.title} key={c.key} id={c.key} status={c.status} handleCardStatusChange={this.props.handleCardChange} />
       ));
     const doingC = this.props.cards
-      .filter(c => c.status === status.Doing)
+      .filter(c => c.status === Status.Doing)
       .map(c => (
-        <Card
-          title={c.title}
-          key={c.key}
-          id={c.key}
-          status={c.status}
-          handleCardChange={this.props.handleCardChange}
-        />
+        <Card title={c.title} key={c.key} id={c.key} status={c.status} handleCardStatusChange={this.props.handleCardChange} />
       ));
     const doneC = this.props.cards
-      .filter(c => c.status === status.Done)
+      .filter(c => c.status === Status.Done)
       .map(c => (
-        <Card
-          title={c.title}
-          key={c.key}
-          id={c.key}
-          status={c.status}
-          handleCardChange={this.props.handleCardChange}
-        />
+        <Card title={c.title} key={c.key} id={c.key} status={c.status} handleCardStatusChange={this.props.handleCardChange} />
       ));
     return (
       <>
