@@ -9,10 +9,6 @@ interface GridProps {
 }
 
 export class Grid extends Component<GridProps, {}> {
-  constructor(props: GridProps) {
-    super(props);
-    this.state = {};
-  }
   render() {
     const todoC = this.props.cards.filter(c => c.status === Status.Todo).map(c => this.mapToCard(c));
     const doingC = this.props.cards.filter(c => c.status === Status.Doing).map(c => this.mapToCard(c));
@@ -46,7 +42,15 @@ export class Grid extends Component<GridProps, {}> {
   }
 
   mapToCard = (c: ICard) => {
-    return <Card title={c.title} key={c.key} id={c.key} status={c.status} handleCardStatusChange={this.props.handleCardChange} />;
+    return (
+      <Card
+        title={c.title}
+        key={c.key}
+        id={c.key}
+        status={c.status}
+        handleCardStatusChange={this.props.handleCardChange}
+      />
+    );
   };
 }
 

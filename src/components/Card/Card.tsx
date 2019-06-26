@@ -12,9 +12,6 @@ enum ButtonType {
 }
 
 export class Card extends Component<CardProps, {}> {
-  constructor(props: CardProps) {
-    super(props);
-  }
   render() {
     return (
       <div className="card">
