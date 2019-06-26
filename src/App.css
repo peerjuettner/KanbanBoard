@@ -1,32 +1,22 @@
 .App {
   font-family: 'Lufthansa Text'
-
 }
 
-.grid-wrapper {
+.flex-wrapper {
   display: flex;
-  color: #05164D;
-}
-
-.row {
-  display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
-  width: 100%;
+  color: #05164D;
+  min-height: 95vh;
 }
 
 .column {
   margin: .25rem;
-  display: flex;
+  flex-basis: 200px;
+  flex-grow: 1;
   flex-direction: column;
-  flex-basis: 100%;
-  flex: 1;
   border: .25rem solid #05164D;
   background-color: #FFFFFF;
-  height: 80vh;
-
 }
-
 
 .card {
   height: 3rem;
@@ -50,9 +40,18 @@ input {
   color: #05164D;
 }
 
+input:disabled {
+  background-color: #88888888;
+}
+
 .control {
   margin: .25rem;
-  color: #05164D
+  color: #05164D;
+  width: 100%
+}
+
+.control>* {
+  margin: .25rem;
 }
 
 @font-face {

@@ -17,10 +17,10 @@ export class Control extends Component<ControlProps, ControlState> {
     return (
       <form onSubmit={this.handleSubmit} className="control">
         <label>
-          Add a thing:
+          {"Add a thing:"}
           <input type="text" name="Title" value={this.state.title} onChange={this.handleChange} />
         </label>
-        <input type="submit" value="Add to Kanban" />
+        <input type="submit" value="Add to Kanban" disabled={!this.state.title} />
       </form>
     );
   }

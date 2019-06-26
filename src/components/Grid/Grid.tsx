@@ -15,26 +15,18 @@ export class Grid extends Component<GridProps, {}> {
     const doneC = this.props.cards.filter(c => c.status === Status.Done).map(c => this.mapToCard(c));
     return (
       <>
-        <div className="grid-wrapper">
-          <div className="row">
-            <div className="column">
-              <div className="todo-column">
-                <h2 className="column-title">"todo"</h2>
-                {todoC}
-              </div>
-            </div>
-            <div className="column">
-              <div className="doing-column">
-                <h2 className="column-title">"doing"</h2>
-                {doingC}
-              </div>
-            </div>
-            <div className="column">
-              <div className="done-column">
-                <h2 className="column-title">"done"</h2>
-                {doneC}
-              </div>
-            </div>
+        <div className="flex-wrapper">
+          <div className="column">
+            <h2 className="column-title">"todo"</h2>
+            {todoC}
+          </div>
+          <div className="column">
+            <h2 className="column-title">"doing"</h2>
+            {doingC}
+          </div>
+          <div className="column">
+            <h2 className="column-title">"done"</h2>
+            {doneC}
           </div>
         </div>
       </>
